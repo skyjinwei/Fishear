@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.fishear.WordInfoActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="3dip"
+            android:paddingRight="3dip"
+            android:paddingBottom="10dip"
+            android:text="Large Text"
+            android:textColor="#000000"
+            android:textSize="30dip" />
+
+        <TextView
+            android:id="@+id/guanLianCi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="3dip"
+            android:paddingBottom="0dip"
+            android:textSize="15dip"
+            android:text="Searching..."
+            android:textColor="#3399ff" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/assocWord0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dip"
+                android:text=""
+                android:textSize="15dip" />
+
+            <TextView
+                android:id="@+id/assocWord1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dip"
+                android:text=""
+                android:textSize="15dip" />
+
+            <TextView
+                android:id="@+id/assocWord2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dip"
+                android:text=""
+                android:textSize="15dip" />
+
+            <TextView
+                android:id="@+id/assocWord3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dip"
+                android:text=""
+                android:textSize="15dip" />
+
+            <TextView
+                android:id="@+id/assocWord4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dip"
+                android:text=""
+                android:textSize="15dip" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/chartListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="0dip"
+            android:layout_margin="0dip" >
+        </ListView>
+
+    </LinearLayout>
+
+</RelativeLayout>

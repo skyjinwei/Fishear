@@ -14,8 +14,11 @@ import org.json.JSONObject;
 import android.support.v7.app.ActionBarActivity;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -27,6 +30,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fishear.WordInfoActivity.DownLoadTask;
 import com.github.mikephil.charting.charts.LineChart;    
@@ -49,6 +53,7 @@ public class MainActivity extends ActionBarActivity {
 	private TextView cityWordValue2View;
 	private TextView cityWordValue3View;
 	private TextView cityWordValue4View;
+	private TextView welcome;
 	private ProgressDialog progressDialog;
 	
 	private EditText tingEdit;
@@ -106,6 +111,12 @@ public class MainActivity extends ActionBarActivity {
 		//progressDialog = ProgressDialog.show(MainActivity.this,"听鱼正在搜寻...","") ;
 		new Thread(new DownLoadTask(locationStr)).start();
 		findView();
+		Bundle extras = getIntent().getExtras();
+		String mUser = extras.getString("user");
+		if(!mUser.equals("")){
+			welcome.setText("欢迎用户:  "+mUser);
+			welcome.setVisibility(View.VISIBLE);
+		}
 		try {
 			Intent intent = getIntent();
 			Bundle bundle = intent.getBundleExtra("bundle");
@@ -166,14 +177,26 @@ public class MainActivity extends ActionBarActivity {
 			@Override
 			public void onClick(View v) {
 				tingWord = tingEdit.getText().toString();
+				
 				if(!tingWord.isEmpty()){
 				Intent intent = new Intent();
 				intent.setClass(MainActivity.this, WordInfoActivity.class);
 				Bundle bundle = new Bundle();
 				bundle.putString("tingWord", tingWord);
 				intent.putExtra("bundle", bundle);
+				ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+				NetworkInfo netInfo = cm.getActiveNetworkInfo();
+				if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+					// 有可用的网络
+					startActivity(intent);	
+				}else{
+					Toast.makeText(getApplicationContext(), "网络连接错误", Toast.LENGTH_SHORT).show();
+				}
 				
-				startActivity(intent);}
+				
+				}else{
+					Toast.makeText(getApplicationContext(), "请输入事件或话题", Toast.LENGTH_SHORT).show();
+				}
 			}
 		});
 		
@@ -195,7 +218,7 @@ public class MainActivity extends ActionBarActivity {
 		cityWordValue2View = (TextView)findViewById(R.id.cityWord2);
 		cityWordValue3View = (TextView)findViewById(R.id.cityWord3);
 		cityWordValue4View = (TextView)findViewById(R.id.cityWord4);
-		
+		welcome = (TextView) findViewById(R.id.welcomeText);
 	}
 
 

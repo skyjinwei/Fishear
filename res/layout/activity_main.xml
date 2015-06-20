@@ -158,4 +158,16 @@
             android:textSize="15dip" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Welcome"
+        android:textColor="#FFFFFF"
+        android:textSize="25dip"
+        android:visibility="invisible" />
+
 </RelativeLayout>

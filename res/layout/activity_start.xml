@@ -13,30 +13,16 @@
     <EditText
         android:id="@+id/start_username"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dip"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp"
-        
-        android:background="#e9ecf1"
+        android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:hint="用户名" >
 
         <requestFocus />
     </EditText>
-
-    <EditText
-        android:id="@+id/start_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/start_username"
-        android:layout_alignRight="@+id/start_username"
-        android:layout_below="@+id/start_username"
-        android:layout_marginTop="46dp"
-        android:background="#e9ecf1"
-        android:ems="10"
-        android:hint="密码"
-        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/start_login"
@@ -46,7 +32,7 @@
         android:layout_alignRight="@+id/start_username"
         android:layout_below="@+id/start_password"
         android:layout_marginTop="27dp"
-        android:background="#139fdd"
+        android:background="@drawable/button_shape"
         android:textColor="#fff"
         android:text="登录" />
 
@@ -82,5 +68,18 @@
         android:textColor="#fff"
         android:clickable="true"
         android:text="以游客身份进入" />
+
+    <EditText
+        android:id="@+id/start_password"
+        android:layout_width="wrap_content"
+        android:layout_height="30dip"
+        android:layout_alignLeft="@+id/start_username"
+        android:layout_alignRight="@+id/start_username"
+        android:layout_below="@+id/start_username"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:hint="密码"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

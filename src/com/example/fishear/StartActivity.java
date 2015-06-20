@@ -166,7 +166,7 @@ public class StartActivity extends ActionBarActivity {
 		});
 	}
 
-	private void bindView() {
+	public void bindView() {
 		// TODO Auto-generated method stub
 		login = (Button) findViewById(R.id.start_login);
 		visit_login = (TextView) findViewById(R.id.start_login1);

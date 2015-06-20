@@ -1077,9 +1077,11 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int fishear=0x7f020057;
-        public static final int ic_launcher=0x7f020058;
-        public static final int icon=0x7f020059;
+        public static final int button_shape=0x7f020057;
+        public static final int fishear=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int icon=0x7f02005a;
+        public static final int rounded_edittext=0x7f02005b;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f050046;
@@ -1140,10 +1142,10 @@ containing a value of this type.
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int rEdisPassword1=0x7f050054;
-        public static final int rEditEmail=0x7f050050;
+        public static final int rEditEmail=0x7f05004f;
         public static final int rEditPassword=0x7f050051;
         public static final int rEditUsername=0x7f05004e;
-        public static final int rEmail=0x7f05004f;
+        public static final int rEmail=0x7f050050;
         public static final int rPassword=0x7f050052;
         public static final int rPassword1=0x7f050053;
         public static final int rUsername=0x7f05004d;
@@ -1166,9 +1168,9 @@ containing a value of this type.
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
         public static final int split_action_bar=0x7f05001e;
-        public static final int start_login=0x7f050058;
+        public static final int start_login=0x7f050057;
         public static final int start_login1=0x7f05005b;
-        public static final int start_password=0x7f050057;
+        public static final int start_password=0x7f050058;
         public static final int start_regist=0x7f05005a;
         public static final int start_text1=0x7f050059;
         public static final int start_username=0x7f050056;

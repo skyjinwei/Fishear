@@ -42,6 +42,7 @@
         android:layout_marginTop="29dp"
         android:background="@drawable/login_shape"
         android:ems="10"
+        android:paddingLeft="10dip"
         android:hint="密码"
         android:inputType="textPassword" >
 
@@ -80,6 +81,7 @@
         android:layout_marginTop="147dp"
         android:background="@drawable/login_shape"
         android:ems="10"
+        android:paddingLeft="10dip"
         android:hint="用户名" />
 
     <TextView

@@ -31,6 +31,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -54,6 +55,7 @@ public class WordInfoActivity extends ActionBarActivity {
 	private ListView lv;
 	private String tingWord;
 	private String guanLianCiKey="Searching...";
+	private String username = "";
 	String wordShown;
 	
 	private Handler mHandler;
@@ -108,6 +110,11 @@ public class WordInfoActivity extends ActionBarActivity {
 		
 		
 		findView();
+		Bundle extras = getIntent().getExtras();
+		String mUser = extras.getString("username");
+		username = mUser;
+		
+		
 		mHandler = new Handler(){
 			@Override
 			public void handleMessage(Message msg) {
@@ -195,8 +202,9 @@ public class WordInfoActivity extends ActionBarActivity {
 				Bundle bundle = new Bundle();
 				bundle.putString("tingWord", associWordsList.get(0));
 				intent.putExtra("bundle", bundle);
-				
+				intent.putExtra("user", username);
 				startActivity(intent);
+				WordInfoActivity.this.finish();
 				
 			}
 		});
@@ -209,9 +217,9 @@ public class WordInfoActivity extends ActionBarActivity {
 				Bundle bundle = new Bundle();
 				bundle.putString("tingWord", associWordsList.get(1));
 				intent.putExtra("bundle", bundle);
-				
+				intent.putExtra("user", username);
 				startActivity(intent);
-				
+				WordInfoActivity.this.finish();
 			}
 		});
 		assocWordView2.setOnClickListener(new OnClickListener() {
@@ -223,9 +231,9 @@ public class WordInfoActivity extends ActionBarActivity {
 				Bundle bundle = new Bundle();
 				bundle.putString("tingWord", associWordsList.get(2));
 				intent.putExtra("bundle", bundle);
-				
+				intent.putExtra("user", username);
 				startActivity(intent);
-				
+				WordInfoActivity.this.finish();
 			}
 		});
 		assocWordView3.setOnClickListener(new OnClickListener() {
@@ -237,9 +245,9 @@ public class WordInfoActivity extends ActionBarActivity {
 				Bundle bundle = new Bundle();
 				bundle.putString("tingWord", associWordsList.get(3));
 				intent.putExtra("bundle", bundle);
-				
+				intent.putExtra("user", username);
 				startActivity(intent);
-				
+				WordInfoActivity.this.finish();
 			}
 		});
 		assocWordView4.setOnClickListener(new OnClickListener() {
@@ -251,9 +259,9 @@ public class WordInfoActivity extends ActionBarActivity {
 				Bundle bundle = new Bundle();
 				bundle.putString("tingWord", associWordsList.get(4));
 				intent.putExtra("bundle", bundle);
-				
+				intent.putExtra("user", username);
 				startActivity(intent);
-				
+				WordInfoActivity.this.finish();
 			}
 		});
 		
@@ -574,6 +582,8 @@ public class WordInfoActivity extends ActionBarActivity {
 		Intent intent = getIntent();
 		Bundle bundle = intent.getBundleExtra("bundle");
 		tingWord = bundle.getString("tingWord");
+		//username = bundle.getString("username");
+		
 		tingWordTV.setText(tingWord);
 		progressDialog = ProgressDialog.show(WordInfoActivity.this,"ÌýÓãÕýÔÚËÑÑ°...","") ;
 		new Thread(new DownLoadTask(tingWord)).start();

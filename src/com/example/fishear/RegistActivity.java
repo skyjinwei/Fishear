@@ -116,6 +116,7 @@ public class RegistActivity extends ActionBarActivity {
 				intent.setClass(RegistActivity.this, MainActivity.class);
 				intent.putExtra("user", user);
 				startActivity(intent);
+				RegistActivity.this.finish();
 			}
 	         
 	    }  

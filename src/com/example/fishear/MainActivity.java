@@ -63,6 +63,7 @@ public class MainActivity extends ActionBarActivity {
 	private float satisfValue;
 	private String wordShown;
 	private ArrayList<String> associWordsList= new ArrayList<String>();
+	private String username = "";
 
 	private Handler mHandler;
 	@Override
@@ -114,6 +115,7 @@ public class MainActivity extends ActionBarActivity {
 		findView();
 		Bundle extras = getIntent().getExtras();
 		String mUser = extras.getString("user");
+		username = mUser;
 		if(!mUser.equals("")){
 			welcome.setText("欢迎用户:  "+mUser);
 			welcome.setVisibility(View.VISIBLE);
@@ -185,11 +187,13 @@ public class MainActivity extends ActionBarActivity {
 				Bundle bundle = new Bundle();
 				bundle.putString("tingWord", tingWord);
 				intent.putExtra("bundle", bundle);
+				intent.putExtra("username", username);
 				ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
 				NetworkInfo netInfo = cm.getActiveNetworkInfo();
 				if (netInfo != null && netInfo.isConnectedOrConnecting()) {
 					// 有可用的网络
-					startActivity(intent);	
+					startActivity(intent);
+					//MainActivity.this.finish();
 				}else{
 					Toast.makeText(getApplicationContext(), "网络连接错误", Toast.LENGTH_SHORT).show();
 				}

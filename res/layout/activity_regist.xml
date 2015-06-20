@@ -17,6 +17,7 @@
         android:layout_alignBottom="@+id/rUsername"
         android:layout_alignLeft="@+id/rEditEmail"
         android:background="@drawable/rounded_edittext"
+        android:paddingLeft="10dip"
         android:ems="10" >
 
         <requestFocus />
@@ -40,6 +41,7 @@
         android:layout_alignBottom="@+id/rEmail"
         android:layout_alignLeft="@+id/rEditPassword"
         android:background="@drawable/rounded_edittext"
+        android:paddingLeft="10dip"
         android:ems="10" />
 
     <EditText
@@ -51,6 +53,7 @@
         android:layout_toRightOf="@+id/rPassword1"
         android:background="@drawable/rounded_edittext"
         android:ems="10"
+        android:paddingLeft="10dip"
         android:inputType="textPassword" >
        
     </EditText>
@@ -74,6 +77,7 @@
         android:layout_toRightOf="@+id/rPassword1"
         android:ems="10"
         android:background="@drawable/rounded_edittext"
+        android:paddingLeft="10dip"
         android:inputType="textPassword" />
 
     <TextView

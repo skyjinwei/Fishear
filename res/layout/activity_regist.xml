@@ -9,17 +9,6 @@
     android:background="#e8f2fc"
     tools:context="com.example.fishear.RegistActivity" >
 
-    <TextView
-        android:id="@+id/rUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="76dp"
-        android:textColor="#2593c8"
-        android:text="用户名：" />
-
     <EditText
         android:id="@+id/rEditUsername"
         android:layout_width="wrap_content"
@@ -108,5 +97,28 @@
         android:background="@drawable/button_shape"
         android:text="注册"
         android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/rUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="115dp"
+        android:text="用户名："
+        android:textColor="#2593c8" />
+
+    <TextView
+        android:id="@+id/TextViewRegist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rEditUsername"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="33dp"
+        android:text="用户注册"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#2593c8"
+        android:textSize="35dip" />
 
 </RelativeLayout>

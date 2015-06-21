@@ -117,7 +117,7 @@ public class MainActivity extends ActionBarActivity {
 		String mUser = extras.getString("user");
 		username = mUser;
 		if(!mUser.equals("")){
-			welcome.setText("ª∂”≠”√ªß:  "+mUser);
+			welcome.setText(mUser);
 			welcome.setVisibility(View.VISIBLE);
 		}
 		try {
